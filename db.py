@@ -2,15 +2,15 @@ import sqlite3
 from sqlite3 import Error
 
 
-def config():
-    db = {
-        'host': 'localhost',
-        'user': 'yfinance-admin',
-        'password': 'yfinance',
-        'database': 'yfinance'
-    }
-
-    return db
+# def config():
+#     db = {
+#         'host': 'localhost',
+#         'user': 'yfinance-admin',
+#         'password': 'yfinance',
+#         'database': 'yfinance'
+#     }
+#
+#     return db
 
 
 def create_connection(db_name):
@@ -34,11 +34,11 @@ def main():
     db_name = 'dictionary.db'
     query = """
     CREATE TABLE IF NOT EXISTS dictionary (
-     id integer PRIMARY KEY,
-     word text,
-     meaning text
-     );
-     """
+        id integer PRIMARY KEY,
+        word text,
+        meaning text
+    );
+    """
     connection = create_connection(db_name)
 
     if connection is not None:

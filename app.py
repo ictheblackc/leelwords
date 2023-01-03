@@ -13,7 +13,6 @@ class App:
     def __init__(self, window):
         self.window = window
         self.window.title('leelwords')
-        #self.window.protocol('WM_DELETE_WINDOW', self.on_exit())
 
         Button(text='Edit', command=self.on_edit).pack(side='bottom', fill='x')
         Button(text='Restart', command=self.on_restart).pack(side='bottom', fill='x')
@@ -25,6 +24,8 @@ class App:
         self.right = Listbox()
         self.right.bind('<<Listbox>>', self.right_callback)
         self.right.pack(side='right', fill='both', expand=True)
+
+        #self.window.protocol('WM_DELETE_WINDOW', self.on_exit())
 
         self.get_words()
 
